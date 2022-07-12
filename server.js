@@ -25,9 +25,9 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 const postgres = knex({
   client: 'pg',
-  connection: {
-    connectionString: process.env.DATABASE_URL,
-    ssl: true,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
   },
 });
 
